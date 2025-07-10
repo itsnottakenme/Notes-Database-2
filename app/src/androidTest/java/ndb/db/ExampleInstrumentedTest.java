@@ -1,4 +1,4 @@
-package n.db;
+package ndb.db;
 
 import android.content.Context;
 

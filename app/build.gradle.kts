@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "n.db"
+    namespace = "ndb.db"
     compileSdk = 36
 
     defaultConfig {
