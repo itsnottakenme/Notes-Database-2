@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "ndb.db"
+    namespace = "ndb"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "n.db"
+        applicationId = "kanana.notesdatabase"
         minSdk = 17
         targetSdk = 36
         versionCode = 1

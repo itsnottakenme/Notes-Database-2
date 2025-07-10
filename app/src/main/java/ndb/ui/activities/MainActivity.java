@@ -1,4 +1,4 @@
-package ndb.db.ui.activities;
+package ndb.ui.activities;
 
 import android.os.Bundle;
 
@@ -8,7 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import ndb.db.R;
+import ndb.R; //ndb.db.R;
 
 public class MainActivity extends AppCompatActivity {
 
