@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--                                                  notebook_list_activity.xml                                              -->
+
+
+
+<LinearLayout    xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 android:background="#98dad3"
+                 >
+
+
+
+
+    <TextView
+            android:id="@+id/debug_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+
+
+    <com.mobeta.android.dslv.DragSortListView
+            android:id="@+id/notebooks_dslv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:longClickable="false"
+            />
+
+
+
+
+    <ndb.ui.bottombar.NotebookListBottomBar
+            android:id="@+id/todo_list_bottombar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#eeeeee"
+            />
+
+
+</LinearLayout>

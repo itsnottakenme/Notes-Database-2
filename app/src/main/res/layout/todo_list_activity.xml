@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ndb.ui.views.SearchBox android:id="@+id/notelist_searchbox"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content" />
+
+
+    <!-- DATE BAR -->
+    <RelativeLayout android:id="@+id/date_select_layout"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+                    <Button
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_back"
+                            android:id="@+id/backButton"
+                            android:minWidth="75dp"
+                            android:layout_gravity="left"
+                            android:onClick="onClick"/>
+
+                    <TextView android:id="@+id/tv_date"
+                              android:layout_centerInParent="true"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:gravity="center"
+
+                              android:textSize="18dp"
+
+                            />
+
+                    <Button
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_forward"
+                            android:id="@+id/forwardButton"
+                            android:layout_gravity="right"
+                            android:minWidth="75dp"
+                            android:onClick="onClick"/>
+    </RelativeLayout>
+
+
+    <!-- TODO LIST -->
+    <!-- WRAP_CONTENT is inefficient for listViews. CHange it! -->
+    <com.mobeta.android.dslv.DragSortListView
+            android:id="@+id/todo_list_dslv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:longClickable="true"
+
+
+            android:descendantFocusability="beforeDescendants"
+
+
+
+            />
+
+
+
+
+    <ndb.ui.bottombar.TodoListBottomBar
+            android:id="@+id/todo_list_bottombar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            />
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+        <!--
+
+                        android:visibility="gone"
+
+
+
+                                                        -->

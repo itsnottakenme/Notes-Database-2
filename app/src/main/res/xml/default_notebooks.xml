@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<notebooks>
+    <notebook>
+        <title>No Category</title>
+        <id>0</id>
+    </notebook>
+
+    <notebook>
+        <title>All Notes</title>
+        <id>-10</id>
+    </notebook>
+
+
+</notebooks>
+
+

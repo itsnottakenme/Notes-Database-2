@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:paddingBottom="5px"
+              android:paddingTop="5px"
+              android:paddingLeft="5px">
+
+
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="5px"
+            android:paddingTop="5px"
+            android:paddingLeft="5px">
+        >
+
+
+
+
+        <TextView android:id="@+id/note_row_title"
+                  style="@style/note_title_font"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:gravity="left" />
+
+
+        <TextView android:id="@+id/note_row_date"
+                  style="@style/date_font"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:gravity="right"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+    <TextView android:id="@+id/note_row_content"
+              android:maxLines="2"
+              style="@style/note_content_font"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10px"
+              android:textColor="#0099CC" android:layout_gravity="bottom|left"/>
+
+    <TextView android:id="@+id/note_row_tags"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10px"
+              android:textColor="#0099CC" android:layout_gravity="bottom|left"/>
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+                                  <!--  -->
+
+
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+        <!-- maybe add themes for each type of data eg. NoteContent, noteTitle, date, etc    -->
+
+
+<resources>
+
+    <!-- ############################    FONTS     #############################################  -->
+    <style name="ndbLight" parent="@android:style/Theme.Holo.Light">
+    </style>
+
+    <!--  NOTEBOOK TITLE FONT  -->
+    <style name="notebook_title_font" parent="@android:style/TextAppearance.Large">
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">#4a79b5</item>
+    </style>
+
+
+
+    <!--  NOTE TITLE FONT  -->
+    <style name="note_title_font" parent="@android:style/TextAppearance.Large">
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">16dp</item>
+
+    </style> <!--<item name="android:textColor">#4a79b5</item>-->
+
+    <style name="note_content_font">
+    </style>
+
+    <style name="date_font">
+    </style>
+
+
+
+    <style name="spinner_font">
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">#4a79b5</item>
+
+    </style>
+
+
+
+
+
+
+
+    <style name="text">
+        <item name="android:padding">4dip</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+
+    <style name="CodeFont" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+
+
+
+
+    <!-- ############################    VIEWS     #############################################  -->
+
+
+    <style name="toolbar">
+        <!-- make background of toolbars all same color -->
+       <item name="android:layout_height">48dp</item>
+    </style>
+
+
+    <style name="toolbar_button">
+       <item name="android:background">@null</item>
+       <item name="android:layout_gravity">center_vertical</item>
+
+
+   </style>
+
+
+    <style name="tag_textview">
+        <item name="android:padding">4dip</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="layout">
+        <item name="android:background">#C0C0C0</item>
+    </style>
+
+
+
+
+
+
+
+
+
+</resources>

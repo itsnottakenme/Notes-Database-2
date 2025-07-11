@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+            <Button
+                    android:id="@+id/import_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Import from Awesome Note"
+                    />
+
+        <Button
+                android:id="@+id/googledrive_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Sync with Google Drive"
+                />
+
+    <Button
+            android:id="@+id/googledrivecreatendbhome_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Create NDB home"
+            />
+
+    <Button
+            android:id="@+id/googledrivedeleteall_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete NDB HOME"
+            />
+
+    <Button
+            android:id="@+id/googledrivebackupdb_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Back up database to google drive"
+            />
+
+    <Button
+            android:id="@+id/googledriverestoredb_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Restore a database from google drive"
+            />
+
+
+
+
+</LinearLayout>
+

@@ -11,7 +11,7 @@ import android.graphics.BitmapFactory;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.webkit.MimeTypeMap;
-import kanana.notesdatabase.R;
+import ndb.R; //kanana.notesdatabase.R;
 import ndb.types.*;
 import ndb.util.DateUtil;
 import org.apache.tools.ant.util.FileUtils;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:descendantFocusability="blocksDescendants"
+
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <!--Only visible if is first _todo of given date-->
+    <TextView android:id="@+id/completed_heading"
+              android:background="#ffff0000"
+              style="@style/date_font"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:gravity="left"
+              android:visibility="gone"/>
+
+
+
+    <TextView
+            android:id="@+id/note_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:textSize="15dp"
+
+
+            android:hint="Note" android:gravity="left|top"/>
+
+
+    <TextView android:id="@+id/note_divider"
+              style="@style/date_font"
+              android:background="#00FF00"
+              android:layout_width="fill_parent"
+              android:layout_height="10dip"
+              android:layout_weight="1"
+              android:gravity="right"
+            />
+
+
+
+</LinearLayout>

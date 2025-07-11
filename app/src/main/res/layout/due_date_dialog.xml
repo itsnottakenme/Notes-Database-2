@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <TextView   android:id="@+id/friendly_date_textview"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"     />
+
+        <TextView   android:id="@+id/relative_days_textview"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:background="#EE0000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"     />
+
+
+        <LinearLayout
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <TextView   android:text="Repeat: "
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"     />
+
+            <Spinner    android:id="@+id/repeating_due_date_spinner"
+
+                        style="@style/spinner_font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"    />
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+    <DatePicker android:id="@+id/date_picker"
+
+                android:layout_gravity="center"
+                android:calendarViewShown="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <Button android:id="@+id/ok_button"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ok" />
+
+        <Button android:id="@+id/cancel_button"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

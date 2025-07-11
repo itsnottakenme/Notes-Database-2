@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/add_option"
+          android:title="Add Item"
+          android:icon="@drawable/ic_menu_add"
+          android:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/search_option"
+          android:title="Search"
+          android:icon="@drawable/ic_menu_search_holo_dark"
+          android:showAsAction="ifRoom|withText"/>
+
+    <item android:id="@+id/settings_option"
+          android:title="Settings"
+          android:icon="@drawable/ic_menu_settings_holo_light"
+          android:showAsAction="ifRoom|withText"/>
+    <!--<item android:id="@+id/about_option"-->
+    <!--android:title="About Me"-->
+    <!--android:icon="@drawable/ic_menu_info_details" />-->
+
+
+</menu>

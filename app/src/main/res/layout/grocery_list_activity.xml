@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+
+
+    <!-- Grocery LIST -->
+    <!-- WRAP_CONTENT is inefficient for listViews. CHange it! -->
+    <com.mobeta.android.dslv.DragSortListView
+            android:id="@+id/grocery_list_dslv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:longClickable="true"
+
+
+            android:descendantFocusability="beforeDescendants"
+
+
+
+            />
+
+
+
+
+    <ndb.ui.bottombar.TodoListBottomBar
+            android:id="@+id/grocery_list_bottombar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            />
+
+
+
+
+
+
+
+</LinearLayout>

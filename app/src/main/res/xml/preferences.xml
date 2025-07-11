@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+<PreferenceCategory
+        android:title="category">
+
+    <CheckBoxPreference
+            android:key="checkbox_preference"
+            android:title="@string/title_checkbox_preference"
+            android:summary="summary" />
+
+</PreferenceCategory>
+
+<PreferenceCategory
+        android:title="dialog preferences">
+
+    <EditTextPreference
+            android:key="edittext_preference"
+            android:title="title"
+            android:summary="summary crap"
+            android:dialogTitle="dialog title" />
+
+    <ListPreference
+            android:key="list_preference"
+            android:title="a"
+            android:summary="b"
+
+
+            android:dialogTitle="e" />
+
+</PreferenceCategory>
+
+
+</PreferenceScreen>

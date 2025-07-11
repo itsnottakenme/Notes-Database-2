@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--                                            notebook_item.xml                                                                         -->
+
+
+
+
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:paddingBottom="5px"
+        android:paddingTop="5px"
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        >
+
+    <TextView android:id="@+id/notebook_title"
+
+              style="@style/notebook_title_font"
+              android:layout_width="wrap_content"
+              android:layout_height="40dp"
+              android:gravity="center"
+              android:layout_alignParentLeft="true"
+            />
+
+
+    <!--DEBUG LAYOUT -->
+    <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:paddingBottom="5px"
+              android:paddingTop="5px"
+              android:paddingLeft="5px"
+              android:visibility="gone">
+
+        <TextView android:id="@+id/notebook_guid"
+
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10px"
+                  android:textColor="#0099CC" android:layout_gravity="bottom|left"/>
+
+    </LinearLayout>
+
+
+    <TextView android:id="@+id/notebook_note_count"
+
+              style="@style/notebook_title_font"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10px"
+              android:layout_alignParentRight="true"
+              android:textColor="#0099CC" android:layout_gravity="bottom|left"/>
+
+
+</RelativeLayout>
+
+

@@ -1,3 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NotesDatabase2</string>
+    <string name="app_name">notesdatabase</string>
+    <string name="noteslist_name">Notes List</string>
+    <string name="esdk__evernote_login_successful">Evernote login successful</string>
+    <string name="esdk__evernote_login_failed">Evernote Login Failed</string>
+
+
+
+    <string name="title_checkbox_preference"></string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- TAGS     -->
+    <string name="NOTE_GUID" type="id"/>
+
+
+
 </resources>

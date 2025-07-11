@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/save_option"
+          android:title="Save note"
+          android:icon="@drawable/ic_menu_save"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/cancel_option"
+          android:title="Cancel note"
+          android:icon="@drawable/ic_menu_close_clear_cancel"
+          android:showAsAction="ifRoom|withText"/>
+    <!--<item android:id="@+id/about_option"-->
+    <!--android:title="About Me"-->
+    <!--android:icon="@drawable/ic_menu_info_details" />-->
+
+
+</menu>
