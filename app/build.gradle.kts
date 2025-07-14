@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(files("libs\\gson-2.1.jar"))
     implementation(files("libs\\ant-1.7.0.jar"))
+    implementation(files("libs\\dslv.jar"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
