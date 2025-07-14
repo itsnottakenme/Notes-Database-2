@@ -154,7 +154,7 @@ public class ExperimentActivity extends Activity
 
     //create importDb, tempDb and nDb objects
     getApplicationContext().deleteDatabase(NDBTableMaster.TEMP_DB);
-    tempDb= new NoteDataSource(this, NDBTableMaster.TEMP_DB);  //todo: careful if eithe rof these lines is wrong
+    tempDb= new NoteDataSource(this, NDBTableMaster.TEMP_DB);  //todo: careful if either of these lines is wrong
     nDb= new NoteDataSource(this, NDBTableMaster.NOTES_DB);                  //     then db becomes fucked!!!
 
     importDb= SQLiteDatabase.openDatabase("/storage/emulated/0/_import/temp/notebase.db", null,SQLiteDatabase.OPEN_READONLY);
