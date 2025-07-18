@@ -74,8 +74,8 @@ public class TodoListBottomBar extends BottomBar
     /**
      * Sort menu
      */
-    ActionItem showAllTodosItem = new ActionItem(TODO_SHOW_ALL, "All", getResources().getDrawable(net.londatiga.android.R.drawable.menu_down_arrow));
-    ActionItem showSingleDayTodosItem = new ActionItem(TODO_SHOW_SINGLE_DAY, "By day", getResources().getDrawable(net.londatiga.android.R.drawable.menu_up_arrow));
+    ActionItem showAllTodosItem = new ActionItem(TODO_SHOW_ALL, "All", getResources().getDrawable(/*net.londatiga.android*/ndb.R.drawable.menu_down_arrow));
+    ActionItem showSingleDayTodosItem = new ActionItem(TODO_SHOW_SINGLE_DAY, "By day", getResources().getDrawable(/*net.londatiga.android*/ndb.R.drawable.menu_up_arrow));
 
     //use setSticky(true) to disable QuickAction dialog being dismissed after an item is clicked
     showSingleDayTodosItem.setSticky(false);
@@ -93,8 +93,8 @@ public class TodoListBottomBar extends BottomBar
     /**
      * Interaction mode menu
      */
-    ActionItem normalInteraction = new ActionItem(INTERACTION_MODE_NORMAL, "Normal", getResources().getDrawable(net.londatiga.android.R.drawable.menu_down_arrow));
-    ActionItem advancedInteraction = new ActionItem(INTERACTION_MODE_ADVANCED, "Advanced", getResources().getDrawable(net.londatiga.android.R.drawable.menu_up_arrow));
+    ActionItem normalInteraction = new ActionItem(INTERACTION_MODE_NORMAL, "Normal", getResources().getDrawable(/*net.londatiga.android*/ndb.R.drawable.menu_down_arrow));
+    ActionItem advancedInteraction = new ActionItem(INTERACTION_MODE_ADVANCED, "Advanced", getResources().getDrawable(/*net.londatiga.android*/ndb.R.drawable.menu_up_arrow));
 
     //use setSticky(true) to disable QuickAction dialog being dismissed after an item is clicked
     normalInteraction.setSticky(false);

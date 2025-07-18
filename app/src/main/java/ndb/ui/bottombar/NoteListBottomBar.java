@@ -71,10 +71,10 @@ public class NoteListBottomBar extends BottomBar
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    ActionItem ascendingSortItem = new ActionItem(SORT_TITLE_ASCENDING, "Ascending", getResources().getDrawable(net.londatiga.android.R.drawable.menu_down_arrow));
-    ActionItem descendingSortItem = new ActionItem(SORT_TITLE_DESCENDING, "Descending", getResources().getDrawable(net.londatiga.android.R.drawable.menu_up_arrow));
-    ActionItem modifiedDateItem = new ActionItem(SORT_DATE_MODIFIED, "Modified Date", getResources().getDrawable(net.londatiga.android.R.drawable.menu_search));
-    ActionItem dateCreatedItem = new ActionItem(SORT_DATE_CREATED, "Date Created", getResources().getDrawable(net.londatiga.android.R.drawable.menu_info));
+    ActionItem ascendingSortItem = new ActionItem(SORT_TITLE_ASCENDING, "Ascending", getResources().getDrawable(/*net.londatiga.android*/ndb.R.drawable.menu_down_arrow));
+    ActionItem descendingSortItem = new ActionItem(SORT_TITLE_DESCENDING, "Descending", getResources().getDrawable(/*net.londatiga.android*/ndb.R.drawable.menu_up_arrow));
+    ActionItem modifiedDateItem = new ActionItem(SORT_DATE_MODIFIED, "Modified Date", getResources().getDrawable(/*net.londatiga.android*/ndb.R.drawable.menu_search));
+    ActionItem dateCreatedItem = new ActionItem(SORT_DATE_CREATED, "Date Created", getResources().getDrawable(/*net.londatiga.android.*/ndb.R.drawable.menu_info));
 //    ActionItem eraseItem 	= new ActionItem(ID_ERASE, "Clear", getResources().getDrawable(net.londatiga.android.R.drawable.menu_eraser));
 //    ActionItem okItem 		= new ActionItem(ID_OK, "OK", getResources().getDrawable(net.londatiga.android.R.drawable.menu_ok));
 

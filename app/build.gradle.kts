@@ -40,6 +40,12 @@ dependencies {
     implementation(files("libs\\gson-2.1.jar"))
     implementation(files("libs\\ant-1.7.0.jar"))
     implementation(files("libs\\dslv.jar"))
+    //implementation(files("libs\\NewQuickAction3dTEST.jar"))
+    //
+    //implementation project(":NewQuickAction3dRemake")
+    //implementation ("net.londatiga:QuickAction:1.0.1")
+    //implementation ("net.londatiga.android:QuickAction:1.0.1")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
