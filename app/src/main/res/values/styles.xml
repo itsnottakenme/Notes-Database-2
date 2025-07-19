@@ -100,7 +100,7 @@
 
 	<!-- PopDownMenu -->
 	<style name="Animations.PopDownMenu" />
-	
+	<!-- -->
 	<style name="Animations.PopDownMenu.Center">
 		<item name="@android:windowEnterAnimation">@anim/grow_from_top</item>
 		<item name="@android:windowExitAnimation">@anim/shrink_from_bottom</item>

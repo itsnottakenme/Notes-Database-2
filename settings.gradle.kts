@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "NotesDatabase2"
 include(":app")
-include(":NewQuickAction3dRemake")

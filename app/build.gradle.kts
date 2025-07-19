@@ -29,6 +29,21 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+
+    ////Attemtping to fix duplicate file constant-values.html from 2 different inputs
+    //todo: probably unnecessary since commenting out jdom library
+    packagingOptions {
+        resources.merges.add("constant-values.html")
+        resources.merges.add("stylesheet.css")
+        resources.merges.add("deprecated-list.html")
+        resources.merges.add("allclasses-noframe.html")
+        resources.merges.add("allclasses-frame.html")
+        resources.merges.add("index.html")
+        resources.merges.add("package-list")
+
+    }
+
 }
 
 dependencies {
@@ -40,13 +55,43 @@ dependencies {
     implementation(files("libs\\gson-2.1.jar"))
     implementation(files("libs\\ant-1.7.0.jar"))
     implementation(files("libs\\dslv.jar"))
-    //implementation(files("libs\\NewQuickAction3dTEST.jar"))
-    //
-    //implementation project(":NewQuickAction3dRemake")
-    //implementation ("net.londatiga:QuickAction:1.0.1")
-    //implementation ("net.londatiga.android:QuickAction:1.0.1")
+    implementation(files("libs\\ant-launcher-1.7.0.jar"))
+    implementation(files("libs\\google-api-client-1.12.0-beta.jar"))
+    implementation(files("libs\\google-play-services.jar"))
+    implementation(files("libs\\google-http-client-1.12.0-beta.jar"))
+    implementation(files("libs\\google-http-client-gson-1.12.0-beta.jar"))
+    implementation(files("libs\\google-api-services-drive-v2-rev30-1.12.0-beta.jar"))
+    implementation(files("libs\\google-http-client-android-1.12.0-beta.jar"))
+    implementation(files("libs\\google-api-client-android-1.12.0-beta.jar"))
+    implementation(files("libs\\google-oauth-client-1.12.0-beta.jar"))
+    implementation(files("libs\\guava-jdk5-13.0.jar"))
+    //implementation(files("libs\\jdom-1.1-javadoc.jar")) // maybe not needed beaciuse in htmlcleaner already?
+    implementation(files("libs\\htmlcleaner-2.2-javadoc.jar"))
+    implementation(files("libs\\htmlcleaner-2.2.jar"))
+    implementation(files("libs\\jdom-1.1.jar"))
+    implementation(files("libs\\jsr305-1.3.9.jar"))
 
+    implementation("com.github.yukuku:ambilwarna:2.0.1")
+
+
+    //Will it work???
+    configurations {
+        all {
+            exclude(group = "com.google.guava", module = "listenablefuture")
+        }
+    }
+
+    //configurations.implementation{excludegroup:() }
+    //implementation(libs.ambilwarna.yukuku)
+    //implementation(com.github.)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
+/**
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+ **/
