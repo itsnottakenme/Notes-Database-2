@@ -1,25 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
 
-    <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.NotesDatabase2">
-        <activity
-            android:name="ndb.ui.activities.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+android:versionCode="1"
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+android:versionName="1.0">
+<uses-sdk android:minSdkVersion="14"/> <!-- todo: deprecated. now OVERRIDDEN by build.gradle file -->
 
+<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+<uses-permission android:name="android.permission.INTERNET" />
+
+
+<!--        permissions for internet   android:theme="@style/CodeFont"  android:theme="@android:style/TextAppearance.Medium"     android:name="kanana.notesdatabase.NdbApp"-->
+
+<!--
+works:                   android:theme="@android:style/Theme.Holo
+doesn't work:            android:theme="@android:style/Theme.Light
+-->
+
+
+
+<application
+    android:allowBackup="true"
+    android:dataExtractionRules="@xml/data_extraction_rules"
+    android:fullBackupContent="@xml/backup_rules"
+    android:supportsRtl="true"
+
+
+
+
+
+    android:label="@string/app_name"
+    android:icon="@drawable/ic_ndb"
+    android:theme="@style/ndbLight"
+    android:uiOptions="splitActionBarWhenNarrow"
+
+
+    >
+
+
+
+
+
+    <activity   android:name="ndb.ui.activities.NotebookListActivity"
+                android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+    </activity>
+
+
+
+
+
+
+    <!-- Tr adding to editnoteactivity.. need to delete all actionbar code though so doesnt throw an error
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+    -->
+    <activity   android:name="ndb.ui.activities.EditNoteActivity"
+                android:windowSoftInputMode="adjustResize"
+                android:exported="true">
+        <intent-filter>
+            <action android:name="EditNoteActivity.intent.action.Launch" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+    <activity   android:name="ndb.ui.activities.NoteListActivity"
+                android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent-filter>
+    </activity>
+
+    <activity   android:name="ndb.ui.activities.EditNotebookActivity"
+                android:windowSoftInputMode="stateAlwaysVisible"
+                android:exported="true"/>
+
+
+
+    <activity   android:name="ndb.ui.activities.PreferencesActivity"
+                android:exported="true"/>
+
+
+    <activity   android:name="ndb.temp.ExperimentActivity"
+                android:windowSoftInputMode="adjustPan"
+                android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+
+        </intent-filter>
+    </activity>
+
+    <activity   android:name="ndb.ui.activities.AdvancedFeaturesActivity"
+                android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+
+        </intent-filter>
+    </activity>
+
+    <activity   android:name="ndb.ui.activities.TodoListActivity"
+                android:windowSoftInputMode="adjustPan"
+                android:exported="true"
+        />
+
+
+    <activity   android:name="ndb.ui.activities.GoogleDriveSetupActivity"
+                android:exported="true"/>
+
+    <activity   android:name="ndb.temp.StartEditNoteActivity"
+                android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent-filter>
+    </activity>
+
+    <activity android:name="ndb.ui.activities.NdbGoogleDriveSetupActivity"/>
+
+    <activity   android:name="ndb.ui.activities._ExperimentalActivity"
+                android:windowSoftInputMode="adjustPan"
+                android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent-filter>
+    </activity>
+    <activity android:name="ndb.ui.activities.GroceryListActivity"/>
+
+
+    <provider android:name="ndb.types.MediaProvider"
+        android:authorities="ndb.mediaprovider"
+        android:exported="true" />
+
+
+
+</application>
 </manifest>
+
+
+
+    <!-- AS auto generated version
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <application
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.NotesDatabase2">
+            <activity
+                android:name="ndb.ui.activities.MainActivity"
+                android:exported="true">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+        </application>
+
+    </manifest>
+
+
+
+
+    REMOVED FROM old NDB AndroidManifest
+    package="kanana.notesdatabase"
+    -->
+
+
+
+
