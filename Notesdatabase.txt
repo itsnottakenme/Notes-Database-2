@@ -1,0 +1,147 @@
+todo change final statics to enums!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+Notebook options:
+______________________________________
+view type - normal or todo list (my unique implementation)!!
+
+ Note
+
+
+
+
+
+
+
+
+Awesome Note Files
+________________________________________
+saved in /private/var/mobile/Applications/E7649DA5-6A46-46D3-BD59-706B1968AB6F
+
+
+debug.keystore
+----------------------
+to get SHA1:
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\ian\.android\debug.keystore -list -v
+
+
+Jar instructions
+-----------------------
+jar -cf myfile.jar com
+(com is root folder of package hierarchy)
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+How to import module
+---------------------------------
+-File->Project structure->Modules: click + button on left side to add module
+-Make sure module is below everything is depends on (i think!)
+-On left side for NotesDatabase module click + and add dependency for added module
+-go into facets and mark imported module as library module
+-(necessarey?) For the added module change the android sdk to same one as project
+
+
+
+
+Android Instrumentation test - AndroidTestCase: java.lang.IllegalAccessError
+---------------------------------------------------------------------------
+Goto project structure and click your test module. Find the module on the right
+side of your screen that is already included in your project. In the scope column
+change the entry from 'compile' to 'provided'
+
+
+
+
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+/toHtml() implementation///////////////
+
+must handle
+:
+1) <p> <br>  <list>
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+
+
+Naming convention
+________________________________
+xml files - all lower case separated by underscores. eg. add_button
+
+
+
+
+
+Types:
+
+-interface RemoteStorage //Used to make coding different remote data syncs easy
+subclasses: ENSession, GoogleDocSession,      DropBoxSession, etc.
+
+
+
+
+
+-Note
+
+
+
+
+-NoteBook
+bool shared;
+
+
+-Tags (is it needed?)
+
+
+
+
+
+
+
+
+
+-owner field maybe needed for shared notes (so maker can worry about updating GUID's
+when new modified date is before checkout date check to see if data is consistant
+
+
+SQLite Tables
+_________________________________________________________
+
+Note Table
+-GUID | note | date | notebookGUID etc (do NOT place tags in this table!)
+      | note type (todo/calendar/etc)
+
+
+
+Tag Table
+-Tguid | GUID | isShared
+and note- primary key (tag name+noteGUID)
+
+
+Notebook Table
+- NBguid | notebook name | isShared
