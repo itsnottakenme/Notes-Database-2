@@ -151,6 +151,17 @@ public class NotebookListActivity extends Activity
       startActivity(editNoteActivityIntent);
     }
 
+///**
+      //todo: test code to see if I can hide navigation menu to see if BottomBar is shown or not/////////////////////////////////////////////////////////////////////////////
+      // TEMPORAY Solution XD
+    View decorView = getWindow().getDecorView();
+// Hide both the navigation bar and the status bar.
+// SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
+// a general rule, you should design your app to hide the status bar whenever you
+// hide the navigation bar.
+    int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_FULLSCREEN;
+    decorView.setSystemUiVisibility(uiOptions);
 
 
     return;

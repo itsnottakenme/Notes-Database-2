@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSTEAD  OF ADDING DATA TO ALREADY INSTALLED NotesDatabase, INSTALLS AN IDENTICAL COPY!
+package:/data/app/~~XNx9KnLqAAPE2GI8ptbjSQ==/kanana.notesdatabase-4SLlRqbTFOiCdkFtvQYknw==/base.apk=kanana.notesdatabase
+package:/data/app/~~XNx9KnLqAAPE2GI8ptbjSQ==/kanana.notesdatabase-4SLlRqbTFOiCdkFtvQYknw==/base.apk=kanana.notesdatabase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2025-07-25 11:20:35.118 23543-23543 InsetsController        kanana.notesdatabase                 I
+onStateChanged: host=kanana.notesdatabase/ndb.ui.activities.NotebookListActivity, from=android.view.ViewRootImpl.setView:1999,
+state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1080, 2340), mDisplayCutout=DisplayCutout{insets=Rect(0, 92 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0),
+Rect(506, 0 - 574, 92), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2340 physicalDisplayWidth=1080 physicalDisplayHeight=2340
+density={2.8125} cutoutSpec={M 0,0 M 0, 8.533333333333333 a 12.08888888888889,12.08888888888889 0 1,0 0,24.17777777777778 a 12.08888888888889,12.08888888888889 0 1,0 0,-24.17777777777778 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=113, center=Point(113, 113)}, RoundedCorner{position=TopRight, radius=113, center=Point(967, 113)}, RoundedCorner{position=BottomRight, radius=113, center=Point(967, 2227)}, RoundedCorner{position=BottomLeft, radius=113, center=Point(113, 2227)}]}  mRoundedCornerFrame=Rect(0, 0 - 1080, 2340), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(956, 0 - 1080, 92) rotation=0}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=1080 displayHeight=2340 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {27 mType=displayCutout mFrame=[0,0][1080,92] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {e060000 mType=statusBars mFrame=[0,0][1080,92] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {e060005 mType=mandatorySystemGestures mFrame=[0,0][1080,126] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {e060006 mType=tappableElement mFrame=[0,0][1080,92] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {18700001 mType=navigationBars mFrame=[0,2205][1080,2340] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {18700004 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {18700005 mType=mandatorySystemGestures mFrame=[0,2205][1080,2340] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {18700006 mType=tappableElement mFrame=[0,2205][1080,2340] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {18700024 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null} }
+
+
+
+
+
+
+
+
+
+
+
+
+
+2025-07-25 11:20:35.142 23543-23543 BLASTBufferQueue_Java   kanana.notesdatabase                 I  update, w= 1080 h= 2340 mName = VRI[NotebookListActivity]@f2364d mNativeObject= 0xb40000799f824570 sc.mNativeObject= 0xb40000784f817310 format= -1 caller= android.graphics.BLASTBufferQueue.<init>:88 android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3397 android.view.ViewRootImpl.relayoutWindow:11361 android.view.ViewRootImpl.performTraversals:4544 android.view.ViewRootImpl.doTraversal:3708 android.view.ViewRootImpl$TraversalRunnable.run:12542
+2025-07-25 11:20:35.143 23543-23543 VRI[Notebo...ty]@f2364d kanana.notesdatabase                 I  Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)0 dur=4 res=0x3 s={true 0xb4000079cf876940} ch=true seqId=0
+2025-07-25 11:20:35.209 23543-23543 InsetsController        kanana.notesdatabase                 I  onStateChanged: host=kanana.notesdatabase/ndb.ui.activities.NotebookListActivity, from=android.view.ViewRootImpl.handleInsetsControlChanged:2888, state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1080, 2340), mDisplayCutout=DisplayCutout{insets=Rect(0, 92 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(506, 0 - 574, 92), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2340 physicalDisplayWidth=1080 physicalDisplayHeight=2340 density={2.8125} cutoutSpec={M 0,0 M 0, 8.533333333333333 a 12.08888888888889,12.08888888888889 0 1,0 0,24.17777777777778 a 12.08888888888889,12.08888888888889 0 1,0 0,-24.17777777777778 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=113, center=Point(113, 113)}, RoundedCorner{position=TopRight, radius=113, center=Point(967, 113)}, RoundedCorner{position=BottomRight, radius=113, center=Point(967, 2227)}, RoundedCorner{position=BottomLeft, radius=113, center=Point(113, 2227)}]}  mRoundedCornerFrame=Rect(0, 0 - 1080, 2340), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(956, 0 - 1080, 92) rotation=0}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=1080 displayHeight=2340 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {3 mType=ime mFrame=[0,0][0,0] mVisible=false mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {27 mType=displayCutout mFrame=[0,0][1080,92] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {e060000 mType=statusBars mFrame=[0,0][1080,92] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {e060005 mType=mandatorySystemGestures mFrame=[0,0][1080,126] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {e060006 mType=tappableElement mFrame=[0,0][1080,92] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {18700001 mType=navigationBars mFrame=[0,2205][1080,2340] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {18700004 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {18700005 mType=mandatorySystemGestures mFrame=[0,2205][1080,2340] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {18700006 mType=tappableElement mFrame=[0,2205][1080,2340] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {18700024 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null} }

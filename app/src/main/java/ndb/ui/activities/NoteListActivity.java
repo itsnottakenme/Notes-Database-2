@@ -68,7 +68,7 @@ public class NoteListActivity extends AbstractNoteListActivity
   private ActionBar mActionBar;
   private ListView mListView;
   private SearchBox sbSearchBox;
-  private BottomBar bbNoteList;
+  private BottomBar bbNoteList;   //todo: not appearing or hidden...why?????
 
   /**
    * View accessories

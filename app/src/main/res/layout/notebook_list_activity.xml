@@ -8,6 +8,9 @@
                  android:layout_height="match_parent"
                  android:orientation="vertical"
                  android:background="#98dad3"
+
+                android:fitsSystemWindows="true"
+
                  >
 
 

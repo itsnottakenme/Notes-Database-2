@@ -59,7 +59,7 @@ dependencies {
     implementation(files("libs\\google-api-client-1.12.0-beta.jar"))
     implementation(files("libs\\google-play-services.jar"))
     implementation(files("libs\\google-http-client-1.12.0-beta.jar"))
-    implementation(files("libs\\google-http-client-gson-1.12.0-beta.jar"))
+    implementation(files("libs/google-http-client-gson-1.12.0-beta.jar"))
     implementation(files("libs\\google-api-services-drive-v2-rev30-1.12.0-beta.jar"))
     implementation(files("libs\\google-http-client-android-1.12.0-beta.jar"))
     implementation(files("libs\\google-api-client-android-1.12.0-beta.jar"))
@@ -72,6 +72,9 @@ dependencies {
     implementation(files("libs\\jsr305-1.3.9.jar"))
 
     implementation("com.github.yukuku:ambilwarna:2.0.1")
+    implementation(libs.androidx.junit)
+
+    //testImplementation("junit:junit:4.12")      //todo: hopefully will allow tests to compile //DOES NOT WORK
 
 
     //Will it work???
