@@ -1,16 +1,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+Caused by: java.lang.IllegalArgumentException: Invalid URI: content://com.android.externalstorage.documents/tree/primary%3ATemp
 
 
 INSTEAD  OF ADDING DATA TO ALREADY INSTALLED NotesDatabase, INSTALLS AN IDENTICAL COPY!

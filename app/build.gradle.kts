@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId = "kanana.notesdatabase"
-        minSdk = 21         //todo: was 17 but changed it to 21 to FIX error" Cannot fit requested classes in a single dex file (# methods: 68327 > 65536)"
-        targetSdk = 36
+        minSdk = 29         //todo: was 17 but changed it to 21 to FIX error" Cannot fit requested classes in a single dex file (# methods: 68327 > 65536)"
+        targetSdk = 36      //      Now changed to 29 in order for android.os.FileUtils to work
         versionCode = 1
         versionName = "1.0"
 
@@ -73,6 +73,8 @@ dependencies {
 
     implementation("com.github.yukuku:ambilwarna:2.0.1")
     implementation(libs.androidx.junit)
+
+    implementation("commons-io:commons-io:2.11.0")    // Use the latest version
 
     //testImplementation("junit:junit:4.12")      //todo: hopefully will allow tests to compile //DOES NOT WORK
 

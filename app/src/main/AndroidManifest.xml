@@ -6,10 +6,15 @@ android:versionCode="1"
 android:versionName="1.0">
 <uses-sdk android:minSdkVersion="14"/> <!-- todo: deprecated. now OVERRIDDEN by build.gradle file -->
 
-<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+<!-- todo: READ_EXTERNAL_STORAGE and WRITE_EXTERNAL_STORAGE permissions are DEPRECATED and don't do anything anymore! -->
 <!--        permissions for internet   android:theme="@style/CodeFont"  android:theme="@android:style/TextAppearance.Medium"     android:name="kanana.notesdatabase.NdbApp"-->
 
 <!--

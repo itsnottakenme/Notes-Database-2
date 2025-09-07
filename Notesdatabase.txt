@@ -4,8 +4,11 @@ todo change final statics to enums!!!!!!!!!
 
 
 
+NotesDatabase File Storage (for backup)
+------------------------------------------
 
-
+<ApplicationId>/databases               (db files)
+<ApplicationId>/files                   (data files including images)
 
 
 

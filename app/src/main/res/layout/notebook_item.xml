@@ -12,6 +12,8 @@
         android:paddingTop="5px"
         android:paddingLeft="5px"
         android:paddingRight="5px"
+
+    android:fitsSystemWindows="true"
         >
 
     <TextView android:id="@+id/notebook_title"

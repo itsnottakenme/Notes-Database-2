@@ -1,0 +1,8 @@
+
+
+
+
+Example of how to turn ADB backup file into a regular TAR archive (using abp.jar):
+java -jar abp.jar unpack notesdb20250725.adb ndb20250725.tar
+
+

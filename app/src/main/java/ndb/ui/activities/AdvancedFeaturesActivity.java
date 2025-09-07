@@ -1,23 +1,41 @@
 package ndb.ui.activities;
 
 import android.app.Activity;
+//import androidx.activity.;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+//import android.os.FileUtils;
 import android.preference.PreferenceManager;
+import android.provider.DocumentsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import com.google.api.services.drive.model.File;
+
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+
+import com.google.api.services.drive.model.File; //todo: FILE has multiple defintions. CAREFUL
 import ndb.R; //kanana.notesdatabase.R;
 import ndb.db.NDBTableMaster;
 import ndb.remote.GoogleDriveAdapter;
 import ndb.types.PrefKey;
+import ndb.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
+
+//import org.apache.commons.io.FileUtils;
+//import java.io.File;
+import java.io.IOException;
+
+//import java.io.File;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,14 +49,20 @@ import java.util.List;
  */
 public class AdvancedFeaturesActivity extends Activity
 {
-  private Button bImport,
-                 bGoogleDriveSync,
-                 bCreateNdbHome,
-                 bDeleteAllDriveStuff,
-                 bBackupDb,
-                 bReplaceDatabase;
+  private Button  bImport,
+                  bGoogleDriveSync,
+                  bCreateNdbHome,
+                  bDeleteAllDriveStuff,
+                  bBackupDb,
+                  bReplaceDatabase,
+                  bBackupDbToLocalStorage;
 
   private GoogleDriveAdapter mGDrive;
+
+
+
+  private int REQUEST_CODE_FOR_EXPORT_DIRECTORY=1,
+              REQUEST_CODE_FOR_IMPORT_DIRECTORY=2;
 
   public void onCreate(Bundle savedInstanceState)
   {
@@ -51,6 +75,7 @@ public class AdvancedFeaturesActivity extends Activity
     bDeleteAllDriveStuff= (Button)findViewById(R.id.googledrivedeleteall_button);
     bBackupDb= (Button) findViewById(R.id.googledrivebackupdb_button);
     bReplaceDatabase= (Button) findViewById(R.id.googledriverestoredb_button);
+    bBackupDbToLocalStorage= (Button) findViewById(R.id.backupNDBtoStorage_button);
 
     mGDrive = new GoogleDriveAdapter(getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(AdvancedFeaturesActivity.this).getString(PrefKey.KEY_ACCOUNT_NAME, PrefKey.FAIL));
 
@@ -149,6 +174,33 @@ public class AdvancedFeaturesActivity extends Activity
     });
 
     /////////////////////////////////////////////////////////////////////////////////////////////
+    //todo: Pop-up file menu to select a directory to upload DB+ other files to
+    bBackupDbToLocalStorage.setOnClickListener(new View.OnClickListener()
+    {
+      @Override
+      public void onClick(View v)
+      {
+        Toast.makeText(getApplicationContext(), "BackupDB to local storage clicked!", Toast.LENGTH_SHORT).show();
+
+
+        //todo: Attempting to get DESTINATION dir for the backup
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
+        // Example: To open at the Downloads folder - sets DEFAULT directory
+        Uri initialUri = Uri.parse("content://com.android.externalstorage.documents/tree/primary%3ADownloads");
+        intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, initialUri);
+        startActivityForResult(intent, REQUEST_CODE_FOR_EXPORT_DIRECTORY); //DEPRECATED!!!!!!!!!!!
+
+
+        String[] temp= getApplicationContext().fileList();
+                  //temp2=getApplicationContext().getFilesDir() ;
+
+
+
+        return;
+
+      }
+    });
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
     mGDrive.setGoogleDriveAdapterListener(new GoogleDriveAdapter.GoogleDriveAdapterListener()
               {
                 @Override
@@ -233,7 +285,82 @@ public class AdvancedFeaturesActivity extends Activity
 
 
 
+
     return;
   }
+
+  /**
+   * This is for processing URL returned for BACKING up as well as RESTORING database +  images
+   * @param requestCode
+   * @param resultCode
+   * @param data
+   */
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data)
+  {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    Uri treeUri= null;
+
+
+    if (resultCode == RESULT_OK)
+    {
+      if (requestCode == REQUEST_CODE_FOR_EXPORT_DIRECTORY)
+      {
+        //todo: save copy of db + images directory to here in eg. NDB_2025_09_07
+        if (data != null)
+        {
+          treeUri = data.getData();
+          if (treeUri != null) {
+            // Take persistent URI permission to retain access across device reboots
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+              getContentResolver().takePersistableUriPermission(treeUri,
+                      Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            }
+          }
+        }
+        if (treeUri != null)
+        {
+          java.io.File source = getApplicationContext().getFilesDir();
+          //java.io.File dest = new java.io.File(Util.createCopyAndReturnRealPath(getApplicationContext(), treeUri)); //new java.io.File(treeUri.getPath());
+          java.io.File dest = new java.io.File("/storage/emulated/0/Download");  //TODO: HARDCODED BACKUP FOLDER
+
+          //Directory dir = Directory('/storage/emulated/0/Download');    //ABSOLUTE PATH TO downloads
+          //FileUtils.copy(origin.toPath(), dest/*dest.toPath()*/);
+            try {
+                org.apache.commons.io.FileUtils.copyDirectory(source, dest);
+            } catch (IOException e) {
+              Toast.makeText(getApplicationContext(), "Export File IOException...", Toast.LENGTH_SHORT).show();
+                throw new RuntimeException(e);
+            }
+        }
+
+
+
+
+        Toast.makeText(getApplicationContext(), "Export started...", Toast.LENGTH_SHORT).show();
+
+        //TODO: JUST need to copy appdata contents to treeUri :D
+
+      }
+      else if (requestCode == REQUEST_CODE_FOR_IMPORT_DIRECTORY)
+      {
+        //todo: delete current db + images, then IMPORT db + images in given directory
+        //  make sure to ask for CONFIRMATION!!!!!!!!!!!!!
+
+      }
+    }
+    return;
+  }
+
+  private void backUpFiles()
+  {
+    return;
+  }
+  private void restore()
+  {
+    return;
+  }
+
 
 } ///////////////END CLASS/////////////

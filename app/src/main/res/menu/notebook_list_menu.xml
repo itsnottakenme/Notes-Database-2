@@ -20,5 +20,6 @@
     <!--android:title="About Me"-->
     <!--android:icon="@drawable/ic_menu_info_details" />-->
 
-
-</menu>
+    <!-- A.S. suggested fix of changing to app:showAsAction JUST MAKES THINGS WORSE :( -->
+    <!-- android:showAsAction="ifRoom" -->
+    </menu>
