@@ -16,6 +16,11 @@ import android.view.*;
 import android.webkit.MimeTypeMap;
 import android.widget.*;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+
 import ndb.db.NDBTableMaster;
 import ndb.db.NoteDataSource;
 import ndb.R; //kanana.notesdatabase.R;
@@ -31,6 +36,21 @@ import ndb.util.Util;
 
 import java.util.*;
 
+
+
+// For Window insets COPIED
+
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.WindowInsets;
+import android.view.WindowManager;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 /**
  * Created with IntelliJ IDEA.
@@ -81,7 +101,7 @@ import java.util.*;
  *
  *
  */
-public class EditNoteActivity extends Activity
+public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just causes CRASH on load :P
 {
   static private String TAG= "EditNoteActivity";
 
@@ -126,7 +146,7 @@ public class EditNoteActivity extends Activity
   private LinearLayout llImages;
   private Button bAddImage;
   private BottomBar bbEditNote;
-
+  private LinearLayout ll_note_wrapper; //outermost layout of note. todo: use for WindowInsets
 
 
   //HACK
@@ -192,6 +212,12 @@ public class EditNoteActivity extends Activity
     setContentView(R.layout.edit_note_activity);
 
 
+  /////////////////
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), false); //todo:supposed to enable edge to edge display??? yes!
+    ///////////////
+      /// ////////////////////////////////////////////
+
+
     retContent = (RichEditText)findViewById(R.id.note_content);
     etTitle= (EditText)findViewById(R.id.note_title);
     tcTags= (TagsControl)findViewById(R.id.tags_control);
@@ -211,7 +237,19 @@ public class EditNoteActivity extends Activity
     mActionBar = getActionBar();
     mActionBar.setDisplayHomeAsUpEnabled(true);
 
+    ll_note_wrapper= (LinearLayout)findViewById(R.id.ll_note_wrapper);
 
+      /////////////// Other WindowInsets code after IDs assigned/////////////////
+      ViewCompat.setOnApplyWindowInsetsListener(ll_note_wrapper, (v, insets) -> {
+                Insets systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+                // Apply padding to the content layout to avoid system bars
+                // changed to hopefully work :P
+                v.setPadding(systemBarsInsets.left, systemBarsInsets.top, systemBarsInsets.right, systemBarsInsets.bottom);
+
+                /// /////////////////////////////////////////////////////////////////////
+      return insets;
+              });
 
 
     /**
@@ -460,6 +498,14 @@ public class EditNoteActivity extends Activity
 
     /**
      * Image listener - loads image in gallery
+     * todo: If open image with Photos app -> "media not found" but
+     *          with View Photos or Image Viewer-> works!!!
+     *          I'm gonna guess this has something to do with the URI format used...
+     *          Is this content URI valid??
+     *          content://kanana.notesdatabase.mediaprovider/35.jpg
+     *
+     *          Tried adding permission <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+     *          but no change!
      */
     imageOnClickListsner= new View.OnClickListener()
     {

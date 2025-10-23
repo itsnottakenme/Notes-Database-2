@@ -1,95 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
+    android:id="@+id/ll_note_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
 
 
-              android:descendantFocusability="beforeDescendants"
-              android:focusableInTouchMode="true"
-        >
-
-
-
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
 
 
     <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fillViewport="true"  >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
+            <EditText
+                android:id="@+id/note_title"
 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
 
-            <EditText   android:id="@+id/note_title"
-
-                        android:textStyle="bold"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-
-                        android:hint="Title"/>
+                android:textStyle="bold" />
             <!--android:singleLine="true"-->
 
-                                                                                <!-- todo_note fields -->
-            <LinearLayout android:id="@+id/todo_items_layout"
-                    android:visibility="gone"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            <!-- todo_note fields -->
+            <LinearLayout
+                android:id="@+id/todo_items_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
 
                 <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <Spinner    android:id="@+id/priority_spinner"
+                    <Spinner
+                        android:id="@+id/priority_spinner"
 
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:hint="Priority"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Priority" />
+
                     <TextView
-                            android:text="                          Due date: "
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="12dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="                          Due date: "
+                        android:textSize="12dp" />
 
-                    <TextView android:id="@+id/todo_due_date"
+                    <TextView
+                        android:id="@+id/todo_due_date"
 
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="18dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp" />
 
 
                 </LinearLayout>
 
 
-
-
                 <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
 
+                    <CheckBox
+                        android:id="@+id/checkbox_completed"
 
-                    <CheckBox   android:id="@+id/checkbox_completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completed " />
 
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Completed " />
+                    <CheckBox
+                        android:id="@+id/checkbox_stickyDateDue"
 
-                    <CheckBox   android:id="@+id/checkbox_stickyDateDue"
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rollover if not completed" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rollover if not completed" />
 
 
                 </LinearLayout>
@@ -98,69 +97,59 @@
             </LinearLayout>                                                  <!-- end todo_note fields -->
 
 
+            <Spinner
+                android:id="@+id/notebook_spinner"
 
-            <Spinner    android:id="@+id/notebook_spinner"
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:hint="Notebook"/>
-
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Notebook" />
 
 
-
-            <ndb.ui.views.TagsControl android:id="@+id/tags_control"
-                                                     android:layout_width="match_parent"
-                                                     android:layout_height="wrap_content" />
-
-
+            <ndb.ui.views.TagsControl
+                android:id="@+id/tags_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
-            <ndb.ui.views.RichEditText     android:id="@+id/note_content"
+            <ndb.ui.views.RichEditText
+                android:id="@+id/note_content"
 
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minLines="5"
-                    android:hint="Note" android:gravity="left|top"/>
-
-
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|top"
+                android:hint="Note"
+                android:minLines="5" />
 
 
             <!-- Image display -->
             <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/images_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                <LinearLayout android:id= "@+id/images_layout"
-                              android:layout_width="match_parent"
-                              android:layout_height="wrap_content">
-
-                    <Button android:id="@+id/add_image_button"
-                            android:text="Add"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"  />
+                    <Button
+                        android:id="@+id/add_image_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Add" />
                 </LinearLayout>
             </HorizontalScrollView>
-
-
-
-
-
-
-
-
 
 
         </LinearLayout>
 
     </ScrollView>
 
-    <ndb.ui.bottombar.EditNoteBottomBar    android:id="@+id/editnote_bottombar"
+    <ndb.ui.bottombar.EditNoteBottomBar
+        android:id="@+id/editnote_bottombar"
 
-            android:layout_width="match_parent"
-            android:background="@android:color/transparent"
-            android:layout_height="48dp"
-            />
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent" />
     <!-- if move this outside scrollview it is not visible :( -->
 
 
