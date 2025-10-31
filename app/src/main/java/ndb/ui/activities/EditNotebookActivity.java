@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import ndb.db.NDBTableMaster;
 import ndb.db.NoteDataSource;
 //import kanana.notesdatabase.db.NotebookDataSource;
@@ -39,6 +44,7 @@ public class EditNotebookActivity extends Activity
   Spinner spNotebookViewType;
   Button bNotebookColor;
   CheckBox cbDefaultRollover;
+  LinearLayout ll_en_wrapper;
 
 
   /**
@@ -69,6 +75,26 @@ public class EditNotebookActivity extends Activity
     spNotebookViewType = (Spinner)findViewById(R.id.notebook_view_type_spinner);
     bNotebookColor= (Button)findViewById(R.id.notebook_color_button);
     cbDefaultRollover= (CheckBox) findViewById(R.id.checkbox_default_rollover);
+
+    ll_en_wrapper= (LinearLayout) findViewById(R.id.ll_en_wrapper);
+
+    /// ///////////////////////////////////////
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+    ll_en_wrapper= (LinearLayout)findViewById(R.id.ll_en_wrapper);
+
+    /////////////// Other WindowInsets code after IDs assigned/////////////////
+    ViewCompat.setOnApplyWindowInsetsListener(ll_en_wrapper, (v, insets) -> {
+      Insets systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+      // Apply padding to the content layout to avoid system bars
+      // changed to hopefully work :P
+      v.setPadding(systemBarsInsets.left, systemBarsInsets.top, systemBarsInsets.right, systemBarsInsets.bottom);
+
+      /// /////////////////////////////////////////////////////////////////////
+      return insets;
+    });
+
 
 
     spNotebookViewType.setAdapter(new ArrayAdapter<Notebook.ViewType>(this, android.R.layout.simple_spinner_item, Notebook.ViewType.values()));

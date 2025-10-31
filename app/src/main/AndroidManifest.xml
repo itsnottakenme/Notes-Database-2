@@ -38,11 +38,15 @@ doesn't work:            android:theme="@android:style/Theme.Light
     android:label="@string/app_name"
     android:icon="@drawable/ic_ndb"
     android:theme="@style/ndbLight"
-    android:uiOptions="splitActionBarWhenNarrow"
+
 
 
     >
 
+    <!-- Removing this from APPLICATION seems to fix ActionBar icons XD
+    android:uiOptions="splitActionBarWhenNarrow"
+
+    -->
 
 
 

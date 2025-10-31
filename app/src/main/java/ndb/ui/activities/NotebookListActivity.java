@@ -30,7 +30,7 @@ import java.util.List;
  * Time: 8:21 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NotebookListActivity extends Activity
+public class NotebookListActivity extends Activity //todo: try using ActionBarActivity as workaround for menu?
 {
 
   /**

@@ -6,6 +6,12 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
+
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import com.mobeta.android.dslv.DragSortListView;
 import ndb.R; //kanana.notesdatabase.R;
 import ndb.db.NDBTableMaster;
@@ -48,6 +54,7 @@ public class GroceryListActivity extends AbstractNoteListActivity /*implements V
   private GroceryAdapter mAdapter;
   private BottomBar bbTodo;
 //  private RelativeLayout rlDateBox;
+  private LinearLayout ll_gl_wrapper;
 
 
   /**
@@ -87,7 +94,24 @@ public class GroceryListActivity extends AbstractNoteListActivity /*implements V
     //tvDate= (TextView)findViewById(R.id.tv_date);
     mListView= (DragSortListView)findViewById(R.id.grocery_list_dslv);
     bbTodo= (BottomBar)findViewById(R.id.grocery_list_bottombar);
+    ll_gl_wrapper= (LinearLayout) findViewById(R.id.ll_gl_wrapper);
 
+    /// ///////////////////////////////////////
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+    ll_gl_wrapper= (LinearLayout)findViewById(R.id.ll_gl_wrapper);
+
+    /////////////// Other WindowInsets code after IDs assigned/////////////////
+    ViewCompat.setOnApplyWindowInsetsListener(ll_gl_wrapper, (v, insets) -> {
+      Insets systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+      // Apply padding to the content layout to avoid system bars
+      // changed to hopefully work :P
+      v.setPadding(systemBarsInsets.left, systemBarsInsets.top, systemBarsInsets.right, systemBarsInsets.bottom);
+
+      /// /////////////////////////////////////////////////////////////////////
+      return insets;
+    });
 
 
     setupListeners();

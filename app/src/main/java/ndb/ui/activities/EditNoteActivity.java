@@ -40,16 +40,16 @@ import java.util.*;
 
 // For Window insets COPIED
 
-import android.os.Build;
-import android.os.Bundle;
+//import android.os.Build;
+//import android.os.Bundle;
 import android.view.View;
-import android.view.WindowInsets;
-import android.view.WindowManager;
+//import android.view.WindowInsets;
+//import android.view.WindowManager;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
+//import androidx.appcompat.app.AppCompatActivity;
+//import androidx.core.view.ViewCompat;
+//import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 /**
@@ -212,7 +212,7 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
     setContentView(R.layout.edit_note_activity);
 
 
-  /////////////////
+  ///////////////// todo: if below is set to TRUE, is that an easier way to fix UI hiding issue???
     WindowCompat.setDecorFitsSystemWindows(getWindow(), false); //todo:supposed to enable edge to edge display??? yes!
     ///////////////
       /// ////////////////////////////////////////////
