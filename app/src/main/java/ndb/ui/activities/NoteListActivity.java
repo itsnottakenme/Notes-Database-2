@@ -429,7 +429,6 @@ public class NoteListActivity extends AbstractNoteListActivity
     MenuInflater inflater = getMenuInflater();
 
 
-
     inflater.inflate(R.menu.note_list_menu, menu); //todo: why not appear???
 
     return true;

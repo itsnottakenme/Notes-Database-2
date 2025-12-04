@@ -139,8 +139,12 @@ doesn't work:            android:theme="@android:style/Theme.Light
 
 
     <provider android:name="ndb.types.MediaProvider"
-        android:authorities="ndb.mediaprovider"
+        android:authorities="kanana.notesdatabase.mediaprovider"
         android:exported="true" />
+<!-- android:authorities MUST contain ApplicationId -->
+
+
+
 
 
 

@@ -35,6 +35,7 @@ import ndb.util.DateUtil;
 import ndb.util.Util;
 
 import java.util.*;
+import androidx.core.content.FileProvider;
 
 
 
@@ -160,7 +161,7 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
   private ArrayAdapter mNotebookTitleSpinnerAdapter;
   private List<Notebook> mNotebookList;
 
-  private View.OnClickListener imageOnClickListsner;
+  private View.OnClickListener imageOnClickListsner;  //todo: This loads the image once clicked!
   private View.OnLongClickListener imageOnLongClickListener;
   ;
 
@@ -507,10 +508,12 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
      *          Tried adding permission <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
      *          but no change!
      */
+
+    /* todo: this is the previous version that gets FILE NOT FOUND from Images app
     imageOnClickListsner= new View.OnClickListener()
     {
       @Override
-      public void onClick(View v)
+      public void onClick(View v)   //todo: this is where MediaProvider is called
       {
         Intent intent;
         Uri uri;
@@ -519,7 +522,7 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
         intent= new Intent();
         media= (Media)v.getTag();
 
-
+        //todo: MediaProvider.CONTENT_URI is WRONG I am assuming. At least
         uri= Uri.parse(MediaProvider.CONTENT_URI+media.getFilename());
 
         intent.setAction(Intent.ACTION_VIEW);
@@ -528,6 +531,36 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
         return;
       }
     };
+*/
+    /**
+     * This sends content URI of image to Gallery app to display the image
+     */
+    imageOnClickListsner= new View.OnClickListener()
+    {
+      @Override
+      public void onClick(View v)   //todo: this is where MediaProvider is called
+      {
+        Intent intent;
+        Uri uri;
+        Media media;
+
+        intent= new Intent();
+        media= (Media)v.getTag();
+
+        //todo: MediaProvider.CONTENT_URI is WRONG I am assuming. At least
+        uri= Uri.parse(MediaProvider.CONTENT_URI+media.getFilename());
+
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, "image/*");
+        startActivity(intent);
+        return;
+      }
+    };
+
+/////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////
+
+
 
 
     /**
@@ -548,21 +581,6 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
         return;
       }
     });
-//    /**
-//     * Image listener - LONG CLICK
-//     */
-//    imageOnLongClickListener= new View.OnLongClickListener()
-//    {
-//      @Override
-//      public boolean onLongClick(View v)
-//      {
-//        /**
-//         * pop up context menu!
-//         */
-//
-//       return false;
-//      }
-//    };
 
 
     /**
