@@ -16,7 +16,8 @@ import android.view.*;
 import android.webkit.MimeTypeMap;
 import android.widget.*;
 
-import androidx.appcompat.app.AppCompatActivity;
+//import androidx.appcompat.app.AppCompatActivity;
+import androidx.activity.OnBackPressedCallback;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
@@ -35,7 +36,7 @@ import ndb.util.DateUtil;
 import ndb.util.Util;
 
 import java.util.*;
-import androidx.core.content.FileProvider;
+//import androidx.core.content.FileProvider;
 
 
 
@@ -118,7 +119,7 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
    * Dialogs
    */
   static final int  DIALOG_CANCEL_CHANGES= 0,
-                    DIALOG_DUE_DATE = 1;;
+                    DIALOG_DUE_DATE = 1;
 
   private DueDateDialog mDueDateDialog;
 
@@ -163,7 +164,7 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
 
   private View.OnClickListener imageOnClickListsner;  //todo: This loads the image once clicked!
   private View.OnLongClickListener imageOnLongClickListener;
-  ;
+
 
 
 
@@ -718,6 +719,26 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
               };
 
 
+    /**
+     * Replacement for deprecated onBackPress()
+     *
+     * This requires Jetpack Activity probably so... methods unrecognised
+     * todo: trying to change api target version in gradle <33 for so I can just use onBackPress() unmodified :P
+     */
+/**
+    androidx.activity.OnBackPressedCallback onBackPressedListener = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+              // Custom back press logic
+
+
+            }
+          };
+           this.getOnBackPressedDispatcher().onBackPressed();
+    getOnBackPressedDispatcher().addCallback(this, onBackPressedListener); // 'this' refers to the lifecycle owner
+**/
+    /////////////////////////////////////////////////////////////////////////////////////
+
     return;
   }                       ////END SETUP LISTENERS////
 
@@ -752,6 +773,11 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
     return;
   }
 
+  /**
+   * todo: This isn't called anymore due to onBackPressed() being deprecated
+   *      This means saveItem isn't invoked and thus note isn't saved (only temporaryNote
+   *      made) when pressing back button
+   */
   @Override
   public void onBackPressed()
   {

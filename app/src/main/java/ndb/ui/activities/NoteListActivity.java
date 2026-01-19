@@ -354,7 +354,10 @@ public class NoteListActivity extends AbstractNoteListActivity
     else  //just load a single notebook
     {
       mNoteList= mDatasource.getNotesFromNotebook(mNotebook.getGuid());
-    }
+    }           //todo: mNoteList contains the duplicated entry
+                //eg:
+                // -10  Outer Wilds
+                //2776  Outer Wilds
     // Use the SimpleCursorAdapter to show the
     // elements in a ListView
 

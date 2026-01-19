@@ -4,12 +4,13 @@ plugins {
 
 android {
     namespace = "ndb"
-    compileSdk = 36
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "kanana.notesdatabase"
         minSdk = 29         //todo: was 17 but changed it to 21 to FIX error" Cannot fit requested classes in a single dex file (# methods: 68327 > 65536)"
-        targetSdk = 36      //      Now changed to 29 in order for android.os.FileUtils to work
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk = 34      //      Now changed to 29 in order for android.os.FileUtils to work
         versionCode = 1
         versionName = "1.0"
 

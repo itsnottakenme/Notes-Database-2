@@ -717,7 +717,11 @@ public class NoteDataSource
     {
 
       newNote = Note.fromCursor(cursor);   //this should return a single noteBook entry
-      notes.add(newNote);
+      //todo: try: ONLY ADD NOTE IF GUID>0. THIS DIDN'T CHANGE ANYTHING. Possibly because many different functions do the same thing and may have been called instead
+      //
+      //if(newNote.getGuid()>=0) {
+        notes.add(newNote);
+      //}
       cursor.moveToNext();
     }
     // Make sure to close the cursor
