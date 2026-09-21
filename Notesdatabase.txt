@@ -1,3 +1,14 @@
+
+Task: enable dark mode in NotesDatabase
+
+
+
+
+
+
+
+
+
 todo change final statics to enums!!!!!!!!!
 
 
