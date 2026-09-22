@@ -6,6 +6,7 @@ in styles.xml is line:
 
 Set Parent Theme: In your styles file, set your app theme to inherit from a DayNight variant, such as Theme.AppCompat.DayNight or Theme.MaterialComponents.DayNight.Control Modes: Use AppCompatDelegate.setDefaultNightMode() in your code to manage behavior:MODE_NIGHT_NO: Forces the light theme.MODE_NIGHT_YES: Forces the dark theme.MODE_NIGHT_FOLLOW_SYSTEM: Matches the device's system settings (default).MODE_NIGHT_AUTO_BATTERY: Switches to dark mode when Battery Saver is active.
 
+Setting background color to black and text to white may be all that I need to do for the dark theme
 
 
 
