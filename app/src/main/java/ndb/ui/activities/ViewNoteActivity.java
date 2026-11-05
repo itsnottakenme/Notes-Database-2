@@ -83,8 +83,10 @@ public class ViewNoteActivity extends Activity
 
     // gets the activity's default ActionBar
     actionBar = getActionBar();
-    actionBar.setTitle("View note");
-    actionBar.show();
+    if (actionBar != null) {
+        actionBar.setTitle("View note");
+        actionBar.show();
+    }
     // set the app icon as an action to go home
     // we are home so we don't need it
     // actionBar.setDisplayHomeAsUpEnabled(true);

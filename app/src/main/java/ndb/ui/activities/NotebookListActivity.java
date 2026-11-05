@@ -112,8 +112,10 @@ public class NotebookListActivity extends Activity //todo: try using ActionBarAc
 
     // gets the activity's default ActionBar
     mActionBar = getActionBar();
-    mActionBar.setTitle("Notebooks");
-     mActionBar.show();
+    if (mActionBar != null) {
+        mActionBar.setTitle("Notebooks");
+        mActionBar.show();
+    }
     // set the app icon as an action to go home
     // we are home so we don't need it
     // actionBar.setDisplayHomeAsUpEnabled(true);

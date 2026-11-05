@@ -97,7 +97,7 @@ public class GroceryListActivity extends AbstractNoteListActivity /*implements V
     ll_gl_wrapper= (LinearLayout) findViewById(R.id.ll_gl_wrapper);
 
     /// ///////////////////////////////////////
-    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
 
     ll_gl_wrapper= (LinearLayout)findViewById(R.id.ll_gl_wrapper);
 

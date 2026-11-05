@@ -1,14 +1,14 @@
 [versions]
 agp = "8.13.2"
 junit = "4.13.2"
-junitVersion = "1.1.5"
+junitVersion = "1.2.1"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
 material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
-ambilwarna = "2.0.1'"
-androidxJunit = "1.2.1"
+ambilwarna = "2.0.1"
+commonsIo = "2.11.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -18,8 +18,8 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-ambilwarna = { group = "  implementation 'com.github.yukuku", name = "ambilwarna", version.ref = "ambilwarna" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
+ambilwarna = { group = "com.github.yukuku", name = "ambilwarna", version.ref = "ambilwarna" }
+commonsIo = { group = "commons-io", name = "commons-io", version.ref = "commonsIo" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

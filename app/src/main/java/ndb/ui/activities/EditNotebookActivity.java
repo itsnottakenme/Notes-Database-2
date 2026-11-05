@@ -79,7 +79,7 @@ public class EditNotebookActivity extends Activity
     ll_en_wrapper= (LinearLayout) findViewById(R.id.ll_en_wrapper);
 
     /// ///////////////////////////////////////
-    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
 
     ll_en_wrapper= (LinearLayout)findViewById(R.id.ll_en_wrapper);
 

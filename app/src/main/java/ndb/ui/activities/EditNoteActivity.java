@@ -214,9 +214,7 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
     setContentView(R.layout.edit_note_activity);
 
 
-  ///////////////// todo: if below is set to TRUE, is that an easier way to fix UI hiding issue???
-    WindowCompat.setDecorFitsSystemWindows(getWindow(), false); //todo:supposed to enable edge to edge display??? yes!
-    ///////////////
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
       /// ////////////////////////////////////////////
 
 
@@ -237,7 +235,9 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
 
 
     mActionBar = getActionBar();
-    mActionBar.setDisplayHomeAsUpEnabled(true);
+    if (mActionBar != null) {
+        mActionBar.setDisplayHomeAsUpEnabled(true);
+    }
 
     ll_note_wrapper= (LinearLayout)findViewById(R.id.ll_note_wrapper);
 
@@ -395,7 +395,9 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
 
 
 
-    mActionBar.setTitle(actionBarTitle);
+    if (mActionBar != null) {
+        mActionBar.setTitle(actionBarTitle);
+    }
 
 
     /**
@@ -403,7 +405,7 @@ public class EditNoteActivity extends  Activity  //todo: AppCompatActivity just 
      */
     mNotebook= mDatasource.getNotebook(mNote.getNbGuid());
     mActionBar= getActionBar();
-    if (mNotebook.getHeaderColor() != 0)
+    if (mActionBar != null && mNotebook.getHeaderColor() != 0)
     {
       mActionBar.setBackgroundDrawable(new ColorDrawable(mNotebook.getHeaderColor()));
       bbEditNote.setBackgroundColor(mNotebook.getHeaderColor());

@@ -123,7 +123,7 @@ public class TodoListActivity extends AbstractNoteListActivity implements View.O
 
 
     /// ///////////////////////////////////////
-    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
 
     ll_td_wrapper= (LinearLayout)findViewById(R.id.ll_td_wrapper);
 
